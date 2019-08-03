@@ -1,0 +1,15 @@
+units           metal
+atom_style      charge
+dimension       3
+boundary        p p s
+
+region          box block 0 80 0 80 0 90
+
+# read data
+read_data       silver_top.dat 
+read_data       silver_bot.dat
+
+
+# outputs
+thermo          100
+thermo_style    custom step temp
