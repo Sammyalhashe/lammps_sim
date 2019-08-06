@@ -1,5 +1,6 @@
 units           metal
 atom_style      atomic
+lattice			fcc 0.408
 dimension       3
 boundary        p p s
 
