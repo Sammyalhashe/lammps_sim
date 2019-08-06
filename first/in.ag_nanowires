@@ -1,5 +1,5 @@
 units           metal
-atom_style      charge
+atom_style      atomic
 dimension       3
 boundary        p p s
 
@@ -9,7 +9,17 @@ region          box block 0 80 0 80 0 90
 read_data       silver_top.dat 
 read_data       silver_bot.dat
 
+# potentials
+include	        pot.mod
+
 
 # outputs
 thermo          100
 thermo_style    custom step temp
+
+# energy minimization
+minimize        1.0e-10 1.0e-10 100000 100000
+
+fix 1 all nvt temp 800 800 100
+run 2000000
+unfix 1

@@ -3,7 +3,7 @@
 
 0.0 80 xlo xhi
 0.0 80 ylo yhi
-0.0 9  zlo zhi
+0.0 1.0  zlo zhi
 
 Masses
 1 107.8682 # Ag
