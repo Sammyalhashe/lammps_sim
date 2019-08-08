@@ -1,0 +1,31 @@
+units metal
+atom_style atomic
+lattice fcc 0.408
+dimension 3
+boundary p p s
+
+region whole block 0 80 0 80 0 90
+create_box 1 whole # created with 1 type of atom in it
+region top block 0 80 0 80 0 10
+region bottom block 0 80 0 80 80 90
+
+create_atoms 1 region top
+create_atoms 1 region bottom
+
+
+reset_timestep 0
+
+include pot.mod
+
+
+
+# outputs
+thermo          100
+thermo_style    custom step temp
+
+# energy minimization
+minimize        1.0e-10 1.0e-10 100000 100000
+
+fix 1 all nvt temp 800 800 100
+run 2000000
+unfix 1

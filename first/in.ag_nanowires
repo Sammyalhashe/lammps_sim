@@ -8,8 +8,8 @@ region          box block 0 80 0 80 0 90
 create_box      1 box
 
 # read data
-read_data       silver_top.dat 
-read_data       silver_bot.dat
+read_data       silver_top.dat add merge 1
+read_data       silver_bot.dat add merge 1
 
 # potentials
 include	        pot.mod
