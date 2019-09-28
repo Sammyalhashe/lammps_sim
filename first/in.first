@@ -35,4 +35,7 @@ minimize        1.0e-10 1.0e-10 100000 100000
 
 fix 1 all nvt temp 800 800 100
 run 2000000
+
+dump            1 all custom 10 *.cfg id type xs ys zs q vx vy vz fx fy fz
+
 unfix 1
